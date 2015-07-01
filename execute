@@ -1,0 +1,4 @@
+docker build -t my-tomee .
+docker run -it --rm --name tomee my-tomee
+docker build -t my-apache2 .
+docker run -it -p 443:443 --link tomee:tomee --rm --name my-running-app my-apache2
